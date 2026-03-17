@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>X Flirting — AI Flirting Lines, Shayari & Replies ✨</title>
+  <meta name="description" content="Generate flirting lines, shayari & witty replies using AI. Choose your language, category, and let AI create the perfect message for your crush!">
+  <meta name="keywords" content="flirting lines, shayari, AI, crush, romantic, hinglish, love, pickup lines">
+  <meta property="og:title" content="X Flirting — AI Flirting Lines & Shayari Generator">
+  <meta property="og:description" content="Generate flirting lines, shayari & witty replies using AI ✨">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="icon128.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated Background Particles -->
+  <div class="bg-particles" id="bg-particles"></div>
+
+  <!-- Page Wrapper -->
+  <div class="page-wrapper">
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h1 class="hero-title">
+        <span class="hero-gradient">X Flirting</span>
+      </h1>
+      <p class="hero-subtitle">AI-powered flirting lines, shayari & witty replies ✨</p>
+    </div>
+
+    <!-- Main Card -->
+    <div class="container">
+
+      <!-- Header -->
+      <div class="header">
+        <div class="header-glow"></div>
+        <div class="logo-wrap">
+          <img src="icon128.png" alt="X Flirting Logo" class="logo-x image-icon" style="width: 32px; height: 32px; filter: drop-shadow(0 0 8px #ff3d7f66); object-fit: contain;">
+          <div class="logo-text">
+            <span class="logo-title">Flirting</span>
+            <span class="logo-sub">XFlirthing</span>
+          </div>
+        </div>
+        <div class="heart-pulse">💘</div>
+      </div>
+
+      <!-- Controls Row -->
+      <div class="controls-row">
+        <div class="select-wrap">
+          <label class="select-label">Language</label>
+          <select id="language" class="select-box">
+            <option value="hinglish">🇮🇳 Hinglish</option>
+            <option value="english">🇬🇧 English</option>
+          </select>
+        </div>
+        <div class="select-wrap">
+          <label class="select-label">Send To</label>
+          <select id="gender" class="select-box">
+            <option value="random">🎲 Random</option>
+            <option value="girl">👩 Girl</option>
+            <option value="boy">👦 Boy</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category -->
+      <div class="field-group">
+        <label class="select-label">Category</label>
+        <select id="category" class="select-box full-width">
+          <option value="random">🎲 Random</option>
+          <option value="crush_name_shayari">💌 Crush Name Shayari</option>
+          <option value="crush_name_flirt">😍 Crush Name Flirting Line</option>
+          <option value="message_reply">💬 Message Reply</option>
+          <option value="flirting_reply">😉 Flirting Reply</option>
+          <option value="random_flirt">🔥 Random Flirting Line</option>
+          <option value="shayari">📜 Shayari</option>
+          <option value="sad_shayari">😢 Sad Shayari</option>
+          <option value="funny_shayari">😂 Funny Shayari</option>
+          <option value="motivation_shayari">💪 Motivation Shayari</option>
+          <option value="random_shayari">✨ Random Shayari</option>
+        </select>
+      </div>
+
+      <!-- Input Fields -->
+      <div id="crush-name-field" class="field-group hidden">
+        <label class="select-label">Crush Name</label>
+        <input type="text" id="crush-name" class="input-box" placeholder="Enter their name... 💫" />
+      </div>
+
+      <div id="message-field" class="field-group hidden">
+        <label class="select-label">Their Message</label>
+        <textarea id="user-message" class="input-box textarea-box" placeholder="Paste their message here... 💬" rows="3"></textarea>
+      </div>
+
+      <!-- Generate Button -->
+      <button id="generate-btn" class="generate-btn">
+        <span id="btn-text">✨ Generate</span>
+        <span id="btn-spinner" class="spinner hidden"></span>
+      </button>
+
+      <!-- Output -->
+      <div id="output-section" class="output-section hidden">
+        <div class="output-header">
+          <span class="output-label">✦ Generated</span>
+          <div style="display: flex; gap: 8px;">
+            <button id="reply-ai-btn" class="copy-btn reply-btn" title="Reply to this message" style="display: none;">
+              <span id="reply-icon">💬</span>
+              <span id="reply-text">Auto Reply</span>
+            </button>
+            <button id="copy-btn" class="copy-btn" title="Copy to clipboard">
+              <span id="copy-icon">⧉</span>
+              <span id="copy-text">Copy</span>
+            </button>
+          </div>
+        </div>
+        <div id="output-box" class="output-box"></div>
+      </div>
+
+      <!-- Error -->
+      <div id="error-box" class="error-box hidden"></div>
+
+      <!-- WhatsApp Channel Button -->
+      <a href="https://whatsapp.com/channel/0029VaAWr3x5PO0y7qLfcR26" target="_blank" rel="noopener noreferrer" class="whatsapp-channel-btn" id="whatsapp-channel-btn">
+        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>Join WhatsApp Channel</span>
+      </a>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Made with 💖 by <span class="hero-gradient">XFlirthing</span></p>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
