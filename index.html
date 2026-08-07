@@ -1,140 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>X Flirting — AI Flirting Lines, Shayari & Replies ✨</title>
-  <meta name="description" content="Generate flirting lines, shayari & witty replies using AI. Choose your language, category, and let AI create the perfect message for your crush!">
-  <meta name="keywords" content="flirting lines, shayari, AI, crush, romantic, hinglish, love, pickup lines">
-  <meta property="og:title" content="X Flirting — AI Flirting Lines & Shayari Generator">
-  <meta property="og:description" content="Generate flirting lines, shayari & witty replies using AI ✨">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="icon128.png">
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gaali Generator — India's #1 AI Roast Tool</title>
+<meta name="description" content="Generate savage personalized roast lines in Hindi, English, Telugu, Bhojpuri, Bengali, Marathi, Nepali and more. Free, AI-powered, 18+ only."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f8f9fa;--bg-dot:rgba(0,0,0,0.03);--surface:#fff;--card:#fff;
+  --shadow:0 2px 16px rgba(0,0,0,0.07);--border:#e9ecef;
+  --text:#1a1a2e;--text2:#6c757d;--accent:#e63946;--accent2:#f4a261;
+  --accent-dark:#c1121f;--input-bg:#fff;--header-bg:#fff;--green:#2d6a4f;
+  --font:'Poppins',sans-serif;
+}
+[data-theme="night"]{
+  --bg:#0d1117;--bg-dot:rgba(255,255,255,0.02);--surface:#161b22;--card:#161b22;
+  --shadow:0 2px 16px rgba(0,0,0,0.3);--border:#30363d;
+  --text:#e6edf3;--text2:#8b949e;--accent:#ff4d5e;--accent2:#ffb347;
+  --accent-dark:#e6384a;--input-bg:#21262d;--header-bg:#161b22;--green:#3fb950;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;
+  overflow-x:hidden;font-size:15px;line-height:1.7;transition:background .3s,color .3s;
+  background-image:radial-gradient(var(--bg-dot) 1px,transparent 1px);
+  background-size:20px 20px}
+.container{max-width:700px;margin:0 auto;padding:0 1.2rem 3rem}
+.site-header{background:var(--header-bg);border-bottom:1px solid var(--border);
+  padding:1.2rem;margin-bottom:1.5rem;transition:background .3s,border-color .3s}
+.header-inner{max-width:700px;margin:0 auto;text-align:center;position:relative}
+.header-title-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.site-header h1{font-size:clamp(26px,5vw,44px);font-weight:800;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15}
+.badge-18{font-size:11px;font-weight:700;background:var(--accent);color:#fff;padding:3px 10px;border-radius:99px;flex-shrink:0}
+.header-sub{color:var(--text2);font-size:13px;margin-top:6px}
+.theme-toggle{position:absolute;top:0;right:0;display:flex;align-items:center;gap:6px;
+  background:var(--card);border:1px solid var(--border);border-radius:99px;
+  padding:6px 14px 6px 10px;cursor:pointer;font-family:var(--font);
+  font-size:12px;font-weight:600;color:var(--text2);transition:all .2s;user-select:none}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:scale(1.04)}
+.t-icon{font-size:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem;margin-bottom:1rem;box-shadow:var(--shadow);
+  transition:background .3s,border-color .3s;animation:fadeUp .45s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.card-label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;display:block}
+input[type="text"]{width:100%;height:54px;padding:0 16px;background:var(--input-bg);
+  border:1px solid var(--border);border-radius:12px;color:var(--text);
+  font-family:var(--font);font-size:17px;outline:none;transition:border-color .2s,box-shadow .2s,background .3s}
+input[type="text"]:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(230,57,70,.12)}
+input::placeholder{color:var(--text2)}
+.lang-pills{display:flex;flex-wrap:wrap;gap:7px;padding-bottom:4px}
+.lang-pill{padding:7px 14px;border-radius:99px;border:1.5px solid var(--border);
+  background:var(--surface);color:var(--text2);font-family:var(--font);
+  font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0;user-select:none}
+.lang-pill:hover{transform:scale(1.04);border-color:var(--accent);color:var(--accent)}
+.lang-pill.active{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;border-color:transparent;box-shadow:0 3px 12px rgba(230,57,70,.25)}
+[data-theme="night"] .lang-pill:not(.active){background:var(--input-bg)}
+.primary-badge{font-size:8px;font-weight:800;background:rgba(255,255,255,.25);padding:1px 5px;border-radius:99px;margin-left:4px;vertical-align:middle}
+.lang-pill:not(.active) .primary-badge{background:rgba(230,57,70,.15);color:var(--accent)}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;animation:fadeUp .5s ease .15s both;margin-bottom:1rem}
+.mode-btn{padding:18px 8px;border-radius:16px;border:1.5px solid var(--border);
+  background:var(--card);color:var(--text);font-family:var(--font);cursor:pointer;
+  transition:all .22s;text-align:center;min-height:130px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+.mode-btn:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.mode-btn:active{transform:scale(.97)}
+.m-icon{font-size:36px;display:block;margin-bottom:8px}
+.m-title{font-size:14px;font-weight:800;display:block;margin-bottom:4px}
+.m-desc{font-size:11px;color:var(--text2);line-height:1.45;display:block}
+.m-normal{border-color:rgba(230,57,70,.3)}.m-normal:hover{border-color:var(--accent);background:rgba(230,57,70,.04)}.m-normal .m-title{color:var(--accent)}
+.m-full{border-color:rgba(244,162,97,.3)}.m-full:hover{border-color:var(--accent2);background:rgba(244,162,97,.04)}.m-full .m-title{color:var(--accent2)}
+.m-shower{border-color:rgba(255,107,53,.3)}.m-shower:hover{border-color:#ff6b35;background:rgba(255,107,53,.04)}.m-shower .m-title{color:#ff6b35}
+.loader-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2.5rem;text-align:center;margin-top:1rem;box-shadow:var(--shadow)}
+.loader-msg{display:block;font-size:14px;color:var(--text2);margin-top:14px;font-weight:500}
+.loader-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+.loader-dots span{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:dotPulse 1.2s ease-in-out infinite}
+.loader-dots span:nth-child(2){animation-delay:.15s}.loader-dots span:nth-child(3){animation-delay:.3s}
+@keyframes dotPulse{0%,80%,100%{opacity:.25;transform:scale(.8)}40%{opacity:1;transform:scale(1.1)}}
+.results-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-top:1rem;box-shadow:var(--shadow);animation:fadeUp .4s ease both}
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px}
+.results-title{font-size:13px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
+.lang-active-badge{display:inline-block;font-size:11px;font-weight:700;background:rgba(34,197,94,.1);color:#16a34a;border:1px solid rgba(34,197,94,.2);border-radius:99px;padding:3px 12px;margin-bottom:10px}
+.copy-all-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .2s}
+.copy-all-btn:hover{background:var(--accent-dark);transform:scale(1.03)}
+.gaali-item{display:flex;align-items:flex-start;gap:12px;background:var(--surface);
+  border:1px solid var(--border);border-left:4px solid var(--accent);
+  border-radius:10px;padding:12px 14px;margin-bottom:8px;
+  animation:slideIn .3s ease both;transition:border-left-color .2s}
+.gaali-item:hover{border-left-color:var(--accent2)}
+@keyframes slideIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+.gaali-num{min-width:26px;height:26px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;margin-top:2px}
+.gaali-text{flex:1;font-size:15px;line-height:1.65;color:var(--text);font-weight:700}
+.copy-btn{background:none;border:1px solid var(--border);border-radius:7px;color:var(--text2);padding:4px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s;flex-shrink:0}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}.copy-btn.copied{border-color:var(--green);color:var(--green)}
+.full-gaali-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;position:relative;animation:slideIn .35s ease both;transition:border-color .2s}
+.full-gaali-card:hover{border-color:var(--accent2)}
+.card-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.type-badge{font-size:10px;font-weight:800;padding:3px 10px;border-radius:99px;letter-spacing:.06em;text-transform:uppercase}
+.process-line{font-size:12px;color:var(--text2);font-style:italic;line-height:1.5;margin-bottom:8px}
+.full-gaali-text{font-size:15px;font-weight:700;color:var(--text);line-height:1.65;padding-right:75px}
+.copy-abs-btn{position:absolute;bottom:12px;right:14px;background:none;border:1px solid var(--border);border-radius:7px;color:var(--text2);padding:4px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s}
+.copy-abs-btn:hover{border-color:var(--accent);color:var(--accent)}.copy-abs-btn.copied{border-color:var(--green);color:var(--green)}
+.t-maa{background:rgba(230,57,70,.12);color:#e63946}.t-behan{background:rgba(219,39,119,.12);color:#db2777}.t-baap{background:rgba(244,162,97,.14);color:#e76f51}.t-shakal{background:rgba(59,130,246,.12);color:#3b82f6}.t-dimag{background:rgba(34,197,94,.12);color:#22c55e}.t-izzat{background:rgba(139,92,246,.12);color:#8b5cf6}.t-khandaan{background:rgba(234,179,8,.14);color:#ca8a04}.t-janwar{background:rgba(132,204,22,.12);color:#65a30d}.t-filmy{background:rgba(245,158,11,.12);color:#d97706}.t-dosti{background:rgba(6,182,212,.12);color:#0891b2}.t-pyaar{background:rgba(244,63,94,.12);color:#f43f5e}.t-paisa{background:rgba(234,179,8,.14);color:#b5830a}.t-naukri{background:rgba(99,102,241,.12);color:#6366f1}.t-comedy{background:rgba(20,184,166,.12);color:#14b8a6}.t-nuclear{background:rgba(220,38,38,.15);color:#dc2626}.t-default{background:rgba(230,57,70,.12);color:var(--accent)}
+.divider{height:1px;background:var(--border);margin:1rem 0}
+.bottom-note{font-size:12px;color:var(--text2);text-align:center;margin-top:8px;font-weight:500}
+.error-card{background:rgba(230,57,70,.06);border:1px solid rgba(230,57,70,.2);border-radius:14px;padding:18px;color:var(--accent);font-size:14px;line-height:1.8;margin-top:1rem}
+.more-btn-wrap{margin-top:12px;text-align:center}
+.more-btn{display:inline-flex;align-items:center;gap:8px;background:none;border:2px solid var(--accent);color:var(--accent);border-radius:10px;padding:10px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--font);transition:all .2s;width:100%;justify-content:center}
+.more-btn:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}.more-btn:active{transform:scale(.97)}
+.more-btn-hint{font-size:11px;color:var(--text2);margin-top:6px}
+.about-section h2,.faq-section h2{font-size:19px;font-weight:800;color:var(--text);margin-bottom:12px}
+.about-section p{font-size:14px;color:var(--text2);line-height:1.85}
+.faq-item{margin-bottom:14px}.faq-item:last-child{margin-bottom:0}
+.faq-q{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
+.faq-a{font-size:13px;color:var(--text2);line-height:1.7}
+.site-footer{border-top:1px solid var(--border);background:var(--header-bg);margin-top:2.5rem;padding:1.5rem 1.2rem;transition:background .3s,border-color .3s}
+.footer-inner{max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-brand{font-size:13px;font-weight:700;color:var(--text)}
+.footer-copy{font-size:12px;color:var(--text2);text-align:center}
+.footer-share{font-size:13px;color:var(--text2)}
+@media(max-width:640px){
+  .mode-grid{grid-template-columns:1fr}
+  .full-gaali-text{padding-right:0;padding-bottom:38px}
+  .footer-inner{flex-direction:column;text-align:center}
+  .theme-toggle span:not(.t-icon){display:none}
+  .theme-toggle{padding:6px 10px}
+}
+</style>
 </head>
 <body>
-  <!-- Animated Background Particles -->
-  <div class="bg-particles" id="bg-particles"></div>
-
-  <!-- Page Wrapper -->
-  <div class="page-wrapper">
-
-    <!-- Hero Section -->
-    <div class="hero-section">
-      <h1 class="hero-title">
-        <span class="hero-gradient">X Flirting</span>
-      </h1>
-      <p class="hero-subtitle">AI-powered flirting lines, shayari & witty replies ✨</p>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+      <span class="t-icon" id="themeIcon">N</span>
+      <span id="themeLabel">Night Mode</span>
+    </button>
+    <div class="header-title-row">
+      <h1>Gaali Generator</h1>
+      <span class="badge-18">18+</span>
     </div>
-
-    <!-- Main Card -->
-    <div class="container">
-
-      <!-- Header -->
-      <div class="header">
-        <div class="header-glow"></div>
-        <div class="logo-wrap">
-          <img src="icon128.png" alt="X Flirting Logo" class="logo-x image-icon" style="width: 32px; height: 32px; filter: drop-shadow(0 0 8px #ff3d7f66); object-fit: contain;">
-          <div class="logo-text">
-            <span class="logo-title">Flirting</span>
-            <span class="logo-sub">XFlirthing</span>
-          </div>
-        </div>
-        <div class="heart-pulse">💘</div>
-      </div>
-
-      <!-- Controls Row -->
-      <div class="controls-row">
-        <div class="select-wrap">
-          <label class="select-label">Language</label>
-          <select id="language" class="select-box">
-            <option value="hinglish">🇮🇳 Hinglish</option>
-            <option value="english">🇬🇧 English</option>
-          </select>
-        </div>
-        <div class="select-wrap">
-          <label class="select-label">Send To</label>
-          <select id="gender" class="select-box">
-            <option value="random">🎲 Random</option>
-            <option value="girl">👩 Girl</option>
-            <option value="boy">👦 Boy</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Category -->
-      <div class="field-group">
-        <label class="select-label">Category</label>
-        <select id="category" class="select-box full-width">
-          <option value="random">🎲 Random</option>
-          <option value="crush_name_shayari">💌 Crush Name Shayari</option>
-          <option value="crush_name_flirt">😍 Crush Name Flirting Line</option>
-          <option value="message_reply">💬 Message Reply</option>
-          <option value="flirting_reply">😉 Flirting Reply</option>
-          <option value="random_flirt">🔥 Random Flirting Line</option>
-          <option value="shayari">📜 Shayari</option>
-          <option value="sad_shayari">😢 Sad Shayari</option>
-          <option value="funny_shayari">😂 Funny Shayari</option>
-          <option value="motivation_shayari">💪 Motivation Shayari</option>
-          <option value="random_shayari">✨ Random Shayari</option>
-        </select>
-      </div>
-
-      <!-- Input Fields -->
-      <div id="crush-name-field" class="field-group hidden">
-        <label class="select-label">Crush Name</label>
-        <input type="text" id="crush-name" class="input-box" placeholder="Enter their name... 💫" />
-      </div>
-
-      <div id="message-field" class="field-group hidden">
-        <label class="select-label">Their Message</label>
-        <textarea id="user-message" class="input-box textarea-box" placeholder="Paste their message here... 💬" rows="3"></textarea>
-      </div>
-
-      <!-- Generate Button -->
-      <button id="generate-btn" class="generate-btn">
-        <span id="btn-text">✨ Generate</span>
-        <span id="btn-spinner" class="spinner hidden"></span>
-      </button>
-
-      <!-- Output -->
-      <div id="output-section" class="output-section hidden">
-        <div class="output-header">
-          <span class="output-label">✦ Generated</span>
-          <div style="display: flex; gap: 8px;">
-            <button id="reply-ai-btn" class="copy-btn reply-btn" title="Reply to this message" style="display: none;">
-              <span id="reply-icon">💬</span>
-              <span id="reply-text">Auto Reply</span>
-            </button>
-            <button id="copy-btn" class="copy-btn" title="Copy to clipboard">
-              <span id="copy-icon">⧉</span>
-              <span id="copy-text">Copy</span>
-            </button>
-          </div>
-        </div>
-        <div id="output-box" class="output-box"></div>
-      </div>
-
-      <!-- Error -->
-      <div id="error-box" class="error-box hidden"></div>
-
-      <!-- WhatsApp Channel Button -->
-      <a href="https://whatsapp.com/channel/0029VaAWr3x5PO0y7qLfcR26" target="_blank" rel="noopener noreferrer" class="whatsapp-channel-btn" id="whatsapp-channel-btn">
-        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span>Join WhatsApp Channel</span>
-      </a>
-
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <p>Made with 💖 by <span class="hero-gradient">XFlirthing</span></p>
-    </div>
-
+    <p class="header-sub">AI-Powered Desi Roast Machine &bull; 7 Languages &bull; Free &bull; Every Time Unique</p>
   </div>
+</header>
+<div class="container">
+  <div class="card" style="animation-delay:.05s">
+    <span class="card-label">Target Ka Naam Likho</span>
+    <input type="text" id="nameInput" placeholder="Enter name... e.g. Pappu, Rahul, Boss saab" maxlength="40"/>
+  </div>
+  <div class="card" style="animation-delay:.1s">
+    <span class="card-label">Gaali Language Chuno</span>
+    <div class="lang-pills" id="langPills">
+      <button class="lang-pill active" data-lang="Hindi" onclick="setLang(this)">Hindi <span class="primary-badge">★ PRIMARY</span></button>
+      <button class="lang-pill" data-lang="English" onclick="setLang(this)">English</button>
+      <button class="lang-pill" data-lang="Telugu" onclick="setLang(this)">Telugu</button>
+      <button class="lang-pill" data-lang="Bhojpuri" onclick="setLang(this)">Bhojpuri</button>
+      <button class="lang-pill" data-lang="Nepali" onclick="setLang(this)">Nepali</button>
+      <button class="lang-pill" data-lang="Bengali" onclick="setLang(this)">Bengali</button>
+      <button class="lang-pill" data-lang="Marathi" onclick="setLang(this)">Marathi</button>
+    </div>
+  </div>
+  <div class="card" style="animation-delay:.12s">
+    <span class="card-label">Target Gender Chuno</span>
+    <div class="lang-pills" id="genderPills">
+      <button class="lang-pill active gender-pill" data-gender="any" onclick="setGender(this)">Any</button>
+      <button class="lang-pill gender-pill" data-gender="male" onclick="setGender(this)">Male</button>
+      <button class="lang-pill gender-pill" data-gender="female" onclick="setGender(this)">Female</button>
+      <button class="lang-pill gender-pill" data-gender="other" onclick="setGender(this)">Other</button>
+    </div>
+  </div>
+  <div class="mode-grid">
+    <button class="mode-btn m-normal" onclick="generate('normal')">
+      <span class="m-title">Seedhi Gaali</span>
+      <span class="m-desc">15 savage gaaliyan — seedhi, direct, copy karo</span>
+    </button>
+    <button class="mode-btn m-full" onclick="generate('full')">
+      <span class="m-title">Full Breakdown</span>
+      <span class="m-desc">Type + Process + Full gaali — complete roast</span>
+    </button>
+    <button class="mode-btn m-shower" onclick="generate('shower')">
+      <span class="m-title">Gaali Shower</span>
+      <span class="m-desc">25 gaaliyan rapid fire — no mercy, no filter</span>
+    </button>
+  </div>
+  <div id="outputArea"></div>
+  <div class="card about-section" style="margin-top:1.5rem;animation-delay:.3s">
+    <h2>About Gaali Generator</h2>
+    <p>Gaali Generator is India's most popular free AI-powered roast and humor tool. Built for adults who love desi humor, our platform lets you generate personalized funny roast lines in 7 different languages — Hindi, English, Telugu, Bhojpuri, Nepali, Bengali and Marathi. Whether you want to roast your best friend on their birthday, create savage content for your group chat, or simply enjoy the rich tradition of Indian verbal humor — Gaali Generator delivers instant entertainment. All content is generated by artificial intelligence and is intended purely for fun between consenting adult friends.</p>
+  </div>
+  <div class="card faq-section" style="animation-delay:.35s">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <p class="faq-q">Is Galo Gaali Generator completely free?</p>
+      <p class="faq-a">Yes, 100% free forever. No account, no subscription, no hidden charges. Just open and use instantly.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Which languages are supported?</p>
+      <p class="faq-a">We support 7 languages: Hindi, English, Telugu, Bhojpuri, Nepali, Bengali and Marathi. All output is written in Roman/English script so everyone can read it easily.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Why do I get unique gaaliyan every time?</p>
+      <p class="faq-a">Our AI uses advanced randomization — different styles, angles and creative directions every generation. Same name, same language — still completely different results every time.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Is my data private and safe?</p>
+      <p class="faq-a">Absolutely. We collect zero user data. No accounts, no tracking, no storage. Every session is completely fresh and private.</p>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Gaali Generator</span>
+    <span class="footer-copy">&copy; 2025 &bull; For Entertainment Only &bull; 18+ Adults Only</span>
+    <span class="footer-share">Share with friends</span>
+  </div>
+</footer>
+<script>
+/* THEME */
+let currentTheme=localStorage.getItem('gaali-theme')||'day';
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t==='night'?'night':'');document.getElementById('themeIcon').textContent=t==='night'?'D':'N';document.getElementById('themeLabel').textContent=t==='night'?'Day Mode':'Night Mode';}
+applyTheme(currentTheme);
+function toggleTheme(){currentTheme=currentTheme==='night'?'day':'night';localStorage.setItem('gaali-theme',currentTheme);applyTheme(currentTheme);}
 
-  <script src="app.js"></script>
+/* LANGUAGE */
+let selectedLang='Hindi',currentMode='normal',selectedGender='any';
+function setLang(el){document.querySelectorAll('.lang-pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');selectedLang=el.dataset.lang;}
+function setGender(el){document.querySelectorAll('.gender-pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');selectedGender=el.dataset.gender;}
+
+/* LOADERS */
+const loaders=['Gaali ban rahi hai...','Target lock ho gaya...','Desi energy loading...','Maa-baap yaad aa rahe hain...','AI roast mode activated...','Preparing devastation...','Language processor engaged...','Nuclear warhead armed...'];
+function rl(){return loaders[Math.floor(Math.random()*loaders.length)];}
+const typeMap={'maa':'t-maa','behan':'t-behan','baap':'t-baap','baba':'t-baap','shakal':'t-shakal','looks':'t-shakal','dimag':'t-dimag','buddhi':'t-dimag','izzat':'t-izzat','khandaan':'t-khandaan','janwar':'t-janwar','filmy':'t-filmy','film':'t-filmy','dosti':'t-dosti','pyaar':'t-pyaar','paisa':'t-paisa','paise':'t-paisa','naukri':'t-naukri','comedy':'t-comedy','nuclear':'t-nuclear'};
+function getTC(t){const l=t.toLowerCase();for(const k in typeMap)if(l.includes(k))return typeMap[k];return 't-default';}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+/* NAME BLOCKLIST */
+function isBlockedName(name){
+  return /\banish\b/i.test(name);
+}
+
+/* UNIQUENESS */
+let gaaliHistory=[];
+const randomSeeds=['Use unexpected metaphors','Focus on career and money','Use Bollywood references','Use cricket references','Use food comparisons','Use vehicle comparisons','Use technology references','Use political style roasting'];
+const randomAngles=['Start every gaali differently','Mix short and long gaaliyan','Use questions as gaaliyan','Use comparisons as gaaliyan','Use dialogue format for some'];
+const randomInsults=['focus on intelligence','focus on appearance','focus on family','focus on finances','focus on romantic life','focus on career','focus on hygiene','focus on fashion'];
+const gaaliStyles=['Make gaaliyan very short and punchy — max 8 words','Make gaaliyan medium length — 10 to 15 words','Mix short and long gaaliyan','Use alliteration in some'];
+const categoryRotations=[['maa','looks','dimag','career','money'],['baap','behan','intelligence','hygiene','animals'],['khandaan','romantic life','sports','cooking','driving'],['izzat','financial','social skills','fitness','travel'],['filmy','animals','technology','college','politics']];
+function rnd(arr){return arr[Math.floor(Math.random()*arr.length)];}
+function saveToHistory(lines){if(!lines||!lines.length)return;const fp=lines.slice(0,3).join('|').toLowerCase().substring(0,100);gaaliHistory.push(fp);if(gaaliHistory.length>5)gaaliHistory.shift();}
+function getHistoryNote(){if(!gaaliHistory.length)return'';return`\nAVOID these used before:\n${gaaliHistory.map((h,i)=>`Prev${i+1}:"${h.substring(0,40)}"`).join('\n')}\nGenerate completely different.`;}
+function buildUniqueness(name){const id=Math.floor(Math.random()*99999),ts=Date.now();return`\nUNIQUENESS(ID:${id} TS:${ts}):\n-Style:${rnd(gaaliStyles)}\n-Angles:${rnd(categoryRotations).join(',')}\n-Direction:${rnd(randomSeeds)}\n-Format:${rnd(randomAngles)}\n-Target:${rnd(randomInsults)}\n-Make COMPLETELY different every time${getHistoryNote()}`;}
+
+/* SYSTEM MESSAGES — LANGUAGE LOCK */
+function getSystemMessage(lang){
+  const s={
+    'Hindi':`You are a Hindi gaali expert. STRICT RULE: Write ONLY in Hinglish — Hindi gaali words in Roman/English script. MANDATORY words: madarchod, bhenchod, chutiya, bhosdike, randi, haraami, kutte, saala, kamina, gandu, lawde, lund, gaand, bhadwa. NO pure English sentences. Max 2-3 English filler words per line. Example correct: "Pappu madarchod, teri maa ki aankh, tu saala chutiya ekdum." WRONG: "Pappu you are stupid." — NOT acceptable.`,
+    'English':`You are a savage English roast comedian. STRICT RULE: Write ONLY pure English. NO Hindi or regional words AT ALL. Use: motherfucker, bastard, asshole, son of a bitch, dickhead, dumbass, shithead, fucking idiot, brainless twat, absolute wanker. Be witty and creative. Example: "Rahul you absolute motherfucker, your IQ is lower than your shoe size."`,
+    'Telugu':`You are a Telugu gaali expert. STRICT RULE: Write ONLY Telugu in Roman script — NEVER Telugu script characters. MANDATORY every line: dengey, puku, lanja, bokka, modda, pichhi kothi, ammoru, baadu, gadida, nakka, sala, randi. Example: "Abhi dengey puku koda, nee amma ki modda, pichhi kothi lanja kodaka." NO English sentences. NO Hindi.`,
+    'Bhojpuri':`You are a Bhojpuri gaali expert. STRICT RULE: Write ONLY Bhojpuri in Roman script — NEVER Devanagari. MANDATORY every line: teri maai ke, randi, launda, bhadwa, gadha, haramzaada, bhosadi, chakka, hijda, gand, lund, bahinchod. Example: "Pappu ke maai ke, tu ta ekdum gadha haves re bhadwa." NO Hindi. NO English.`,
+    'Nepali':`You are a Nepali gaali expert. STRICT RULE: Write ONLY Nepali in Roman script — NEVER Devanagari. MANDATORY every line: muji, randi, kutta, gadha, haramzada, teri aama ko, boka, puti, lado, chikne, ullu, jhata, maderchod, sworni. Example: "Rahul muji, teri aama ko lado, kutta jasto chhas tu sworni." NO Hindi. NO English.`,
+    'Bengali':`You are a Bengali gaali expert. STRICT RULE: Write ONLY Bengali in Roman script — NEVER Bengali script. MANDATORY every line: magi, khanki magi, bokachoda, shala, tor maa ke, khankir chele, choda, baal, haramzada, pagol, gadha, kukur, randi. Example: "Ravi shala bokachoda, tor maa ke chodi, khanki magi r chele." NO Hindi. NO English.`,
+    'Marathi':`You are a Marathi gaali expert. STRICT RULE: Write ONLY Marathi in Roman script — NEVER Devanagari. MANDATORY every line: aai zavli, bhosadya, rand, bhadwa, zhavlela, gand, lauda, haramkhor, kuthra, gadav, aai chi, aaichya gavat, sala. Example: "Suresh bhosadya, teri aai chi zavli, kuthra sala aaichya gavat." NO Hindi. NO English.`
+  };
+  return s[lang]||s['Hindi'];
+}
+
+/* LANGUAGE PROMPTS */
+function getLangBase(lang,name,count){
+  const n=name,c=count;
+  const p={
+    'Hindi':`LANGUAGE LOCK: HINDI HINGLISH ONLY.\n---\nGenerate exactly ${c} brutal savage Hindi gaali lines targeting ${n}. Hinglish Roman script. Use: bhenchod,madarchod,chutiya,bhosdike,gaand,lund,randi,harami,kutte,saala,kamina,gandu,bhadwa,lawde. Every gaali must have ${n}. All different. ONLY numbered list 1-${c}. Zero extra text.`,
+    'English':`LANGUAGE LOCK: PURE ENGLISH ONLY. No Hindi/regional words.\n---\nGenerate exactly ${c} brutal savage English roast lines targeting ${n}. Pure English. Use: bastard,asshole,motherfucker,dumbass,son of a bitch,dickhead,moron,fucking idiot. Witty burns. Every line must have ${n}. ONLY numbered list 1-${c}. Zero extra text.`,
+    'Telugu':`LANGUAGE LOCK: TELUGU ROMAN SCRIPT ONLY. No English sentences. No Hindi.\n---\nGenerate exactly ${c} brutal Telugu gaali lines targeting ${n}. Roman letters only. Use: dengey,puku,lanja,bokka,modda,nayana,ammoru,pichhi,kothi,baadu,gadida,nakka,sala,randi. Every gaali must have ${n}. ONLY numbered list 1-${c}. Zero extra text.`,
+    'Bhojpuri':`LANGUAGE LOCK: BHOJPURI ROMAN ONLY. No English. No standard Hindi.\n---\nGenerate exactly ${c} brutal Bhojpuri gaali lines targeting ${n}. Roman Bhojpuri only. Use: teri maai ke,randi,launda,haraami,gadha,bhosadi,bhadwa,chakka,hijda,gand,lund,bahinchod. Every gaali must have ${n}. ONLY numbered list 1-${c}. Zero extra text.`,
+    'Nepali':`LANGUAGE LOCK: NEPALI ROMAN ONLY. No English. No Hindi.\n---\nGenerate exactly ${c} brutal Nepali gaali lines targeting ${n}. Roman Nepali only. Use: muji,randi,kutta,gadha,haramzada,teri aama ko,boka,puti,lado,chikne,ullu,jhata,maderchod,sworni. Every gaali must have ${n}. ONLY numbered list 1-${c}. Zero extra text.`,
+    'Bengali':`LANGUAGE LOCK: BENGALI ROMAN ONLY. No English sentences. No Hindi.\n---\nGenerate exactly ${c} brutal Bengali gaali lines targeting ${n}. Roman Bengali only. Use: magi,khanki,choda,baal,khankir chele,bokachoda,tor maa ke,haramzada,shala,gadha,kutta,pagol,randi. Every gaali must have ${n}. ONLY numbered list 1-${c}. Zero extra text.`,
+    'Marathi':`LANGUAGE LOCK: MARATHI ROMAN ONLY. No English. No Hindi.\n---\nGenerate exactly ${c} brutal Marathi gaali lines targeting ${n}. Roman Marathi only. Use: aai zavli,bhadwa,rand,zhavlela,gand,lauda,haramkhor,kuthra,gadav,aai chi,bhosadya,aaichya gavat,sala. Every gaali must have ${n}. ONLY numbered list 1-${c}. Zero extra text.`
+  };
+  return p[lang]||p['Hindi'];
+}
+
+function getPrompt(mode,name,lang){
+  const count=mode==='shower'?25:15;
+  const gender=selectedGender||'any';
+  if(mode==='full'){
+    const base=getLangBase(lang,name,15).split('ONLY numbered list')[0];
+    return`${base}\nTarget Gender: ${gender}. Use pronouns and references appropriate to this gender.\nSTRICTLY use this format (blank line between each):\nTYPE: [category]\nPROCESS: [one line angle]\nGAALI: [full savage line with ${name}]\n\nCover 15 types: Maa wali,Behan wali,Baap wali,Shakal wali,Dimag wali,Izzat wali,Khandaan wali,Janwar wali,Filmy wali,Dosti wali,Pyaar wali,Paisa wali,Naukri wali,Comedy wali,Nuclear wali.\nEvery GAALI must have ${name}. No extra text.${buildUniqueness(name)}`;
+  }
+  return getLangBase(lang,name,count)+`\nTarget Gender: ${gender}. Use pronouns and references appropriate to this gender.`+buildUniqueness(name);
+}
+
+/* API CALL — FIXED ENDPOINT + SYSTEM MESSAGE */
+async function callAPI(userPrompt,lang){
+  const res=await fetch('/.netlify/functions/groq',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      model:'llama-3.3-70b-versatile',
+      messages:[
+        {role:'system',content:getSystemMessage(lang)},
+        {role:'user',content:userPrompt}
+      ]
+    })
+  });
+  if(!res.ok){let msg='Server error '+res.status;try{const j=await res.json();msg=j.error?.message||msg;}catch(e){}throw new Error(msg);}
+  const data=await res.json();
+  if(data.error)throw new Error(data.error.message||'API error');
+  return data.choices?.[0]?.message?.content||'';
+}
+
+/* GENERATE */
+async function generate(mode,keepMode){
+  const name=document.getElementById('nameInput').value.trim();
+  const area=document.getElementById('outputArea');
+  if(!keepMode)currentMode=mode;
+  if(!name){area.innerHTML=`<div class="error-card">Naam toh daal pehle bhai!</div>`;return;}
+  if(isBlockedName(name)){
+    area.innerHTML=`<div class="error-card">Is naam ke liye gaali generation blocked hai.</div>`;
+    return;
+  }
+  area.innerHTML=`<div class="loader-card"><span class="loader-msg">${rl()}</span><div class="loader-dots"><span></span><span></span><span></span></div></div>`;
+  try{
+    const raw=await callAPI(getPrompt(mode,name,selectedLang),selectedLang);
+    if(mode==='full')renderFull(raw,name);
+    else renderNormal(raw,name,mode);
+  }catch(err){
+    area.innerHTML=`<div class="error-card"><strong>Error:</strong> ${esc(err.message)}</div>`;
+  }
+}
+
+function moreGaaliyan(){const btn=document.getElementById('moreBtn');if(btn){btn.textContent='Generating...';btn.disabled=true;}generate(currentMode,true);}
+
+/* RENDER NORMAL */
+function renderNormal(raw,name,mode){
+  const area=document.getElementById('outputArea');
+  const lines=raw.split('\n').map(l=>l.trim()).filter(l=>/^\d+[\.)]\]\s/.test(l)||/^\d+[\.)\]]\s/.test(l)).map(l=>l.replace(/^\d+[\.)\]]\s*/,'').trim()).filter(l=>l.length>4);
+  const parsedLines = raw.split('\n').map(l=>l.trim()).filter(l=>/^\d+[\.)]\s/.test(l)).map(l=>l.replace(/^\d+[\.)]\s*/,'').trim()).filter(l=>l.length>4);
+  const finalLines = parsedLines.length ? parsedLines : lines;
+  if(!finalLines.length){area.innerHTML=`<div class="error-card">Parse error — Dobara try karo!</div>`;return;}
+  saveToHistory(finalLines);window._gaali=finalLines;window._gaaliMode='normal';
+  const label=mode==='shower'?'Gaali Shower':'Seedhi Gaali';
+  let html=`<div class="results-card">
+  <div class="lang-active-badge">Pure ${esc(selectedLang)} Mode Active</div>
+  <div class="results-header">
+    <div class="results-title">${esc(name)} Ki ${finalLines.length} ${esc(selectedLang)} Gaaliyan — ${label}</div>
+    <button class="copy-all-btn" onclick="copyAllNormal()">Sab Copy</button>
+  </div>`;
+  finalLines.forEach((line,i)=>{html+=`<div class="gaali-item" style="animation-delay:${i*.04}s"><div class="gaali-num">${i+1}</div><div class="gaali-text">${esc(line)}</div><button class="copy-btn" onclick="copyLine(this,${JSON.stringify(line)})">Copy</button></div>`;});
+  html+=`<div class="divider"></div><p class="bottom-note">Naam badlo ya dobara generate karo — har baar naye!</p><div class="more-btn-wrap"><button class="more-btn" id="moreBtn" onclick="moreGaaliyan()">Aur Gaaliyan Do!</button><div class="more-btn-hint">Har baar naye — guaranteed!</div></div></div>`;
+  area.innerHTML=html;
+}
+
+/* RENDER FULL */
+function parseFullBlocks(raw){
+  const blocks=[];
+  const chunks=raw.split(/\n{2,}(?=TYPE:)/i);
+  for(const chunk of chunks){
+    const lines=chunk.split('\n').map(l=>l.trim()).filter(Boolean);
+    let type='',process='',gaali='';
+    for(const l of lines){
+      if(/^TYPE:/i.test(l))type=l.replace(/^TYPE:\s*/i,'').trim();
+      else if(/^PROCESS:/i.test(l))process=l.replace(/^PROCESS:\s*/i,'').trim();
+      else if(/^GAALI:/i.test(l))gaali=l.replace(/^GAALI:\s*/i,'').trim();
+    }
+    if(gaali)blocks.push({type:type||'Gaali',process,gaali});
+  }
+  return blocks;
+}
+function renderFull(raw,name){
+  const area=document.getElementById('outputArea');
+  const blocks=parseFullBlocks(raw);
+  if(!blocks.length){area.innerHTML=`<div class="error-card">Parse error — Dobara try karo!</div>`;return;}
+  saveToHistory(blocks.map(b=>b.gaali));window._gaali=blocks;window._gaaliMode='full';
+  let html=`<div class="results-card">
+  <div class="lang-active-badge">Pure ${esc(selectedLang)} Mode Active</div>
+  <div class="results-header">
+    <div class="results-title">${esc(name)} — ${blocks.length} ${esc(selectedLang)} Full Breakdown</div>
+    <button class="copy-all-btn" onclick="copyAllFull()">Sab Copy</button>
+  </div>`;
+  blocks.forEach((b,i)=>{const cls=getTC(b.type);html+=`<div class="full-gaali-card" style="animation-delay:${Math.min(i*.055,1.2)}s"><div class="card-top"><span class="type-badge ${cls}">${esc(b.type)}</span></div>${b.process?`<div class="process-line">${esc(b.process)}</div>`:''}<div class="full-gaali-text">${esc(b.gaali)}</div><button class="copy-abs-btn" onclick="copyLine(this,${JSON.stringify(b.gaali)})">Copy</button></div>`;});
+  html+=`<div class="divider"></div><p class="bottom-note">Naam badlo ya dobara generate karo!</p><div class="more-btn-wrap"><button class="more-btn" id="moreBtn" onclick="moreGaaliyan()">Aur Gaaliyan Do!</button><div class="more-btn-hint">Har baar naye — guaranteed!</div></div></div>`;
+  area.innerHTML=html;
+}
+
+/* COPY — SUPER ROBUST — works on all browsers + Netlify */
+function copyText(text, btn, originalLabel) {
+  const orig = originalLabel || 'Copy';
+
+  // Method 1: Modern clipboard API
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => {
+      showCopied(btn, orig);
+    }).catch(() => {
+      fallbackCopy(text, btn, orig);
+    });
+  } else {
+    fallbackCopy(text, btn, orig);
+  }
+}
+
+function fallbackCopy(text, btn, orig) {
+  // Method 2: execCommand fallback
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, 99999); // mobile
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    if (ok) showCopied(btn, orig);
+    else showError(btn, orig);
+  } catch(e) {
+    showError(btn, orig);
+  }
+}
+
+function showCopied(btn, orig) {
+  if (!btn) return;
+  btn.textContent = 'Copied!';
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+}
+
+function showError(btn, orig) {
+  if (!btn) return;
+  btn.textContent = 'Failed';
+  setTimeout(() => { btn.textContent = orig; }, 2000);
+}
+
+function copyLine(btn, text) {
+  copyText(text, btn, 'Copy');
+}
+
+function copyAllNormal() {
+  if (!window._gaali) return;
+  const t = window._gaali.map((l, i) => `${i+1}. ${l}`).join('\n');
+  const btn = document.querySelector('.copy-all-btn');
+  copyText(t, btn, 'Sab Copy');
+}
+
+function copyAllFull() {
+  if (!window._gaali) return;
+  const t = window._gaali.map((b, i) => `${i+1}. [${b.type}]\nProcess: ${b.process}\nGaali: ${b.gaali}`).join('\n\n');
+  const btn = document.querySelector('.copy-all-btn');
+  copyText(t, btn, 'Sab Copy');
+}
+
+function flashBtn(msg, orig) {
+  const btn = document.querySelector('.copy-all-btn');
+  if (btn) { btn.textContent = msg; setTimeout(() => btn.textContent = orig, 2200); }
+}
+
+function fbCopy(text, btn) { fallbackCopy(text, btn, 'Copy'); }
+
+document.getElementById('nameInput').addEventListener('keydown',e=>{
+  if(e.key==='Enter')document.getElementById('outputArea').innerHTML=`<div class="error-card" style="margin-top:1rem">Mode chuno — Seedhi Gaali, Full Breakdown, ya Gaali Shower!</div>`;
+});
+</script>
 </body>
 </html>
